@@ -24,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "src/pages/SimpleCounter/components/SynchronizedСounters.tsx"]
+  "include": ["src", "src/pages/simpleCounter/components/SynchronizedСounters.tsx"]
 }
