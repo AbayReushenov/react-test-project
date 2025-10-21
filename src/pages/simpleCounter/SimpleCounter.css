@@ -35,13 +35,14 @@
 
 .card {
   padding: 2em;
+
+  button {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .read-the-docs {
   color: #888;
 }
 
-.card > button {
-  margin-left: 10px;
-  margin-right: 10px;
-}
