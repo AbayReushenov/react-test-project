@@ -93,7 +93,9 @@ nav a {
   text-decoration: none;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
+  text-align: left;
 }
+
 nav a:hover {
   background: #e3e3e3;
 }

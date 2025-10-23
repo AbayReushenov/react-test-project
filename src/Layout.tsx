@@ -8,6 +8,7 @@ function Layout() {
       <NavLink to="/" className={({ isActive }) => isActive ? 'active' : undefined}>Главная</NavLink>
       <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : undefined}>О проекте</NavLink>
       <NavLink to="/simple-counter" className={({ isActive }) => isActive ? 'active' : undefined}>Простой счетчик</NavLink>
+      <NavLink to="/weather-dashboard" className={({ isActive }) => isActive ? 'active' : undefined}>Погодный дашборд с прогнозом</NavLink>
     </nav>
 
     <main>
