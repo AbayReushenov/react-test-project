@@ -1,4 +1,8 @@
 ##  Погодный дашборд с прогнозом
+## Ссылки
+https://home.openweathermap.org/subscriptions
+https://openweathermap.org/api/one-call-3
+https://home.openweathermap.org/
 
 # библиотеки для проекта
 # State-менеджмент
@@ -142,3 +146,63 @@ https://api.openweathermap.org/data/2.5/weather?lat=55.708&lon=37.731&appid={YOU
   "cod": 200
 }
 ```
+
+# Endpoint:
+- Please, use the endpoint api.openweathermap.org for your API calls
+
+# Example of API call:
+# London weather
+
+https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID={API key}
+
+{
+  "coord": {
+    "lon": -0.1257,
+    "lat": 51.5085
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 282.84,
+    "feels_like": 279.63,
+    "temp_min": 281.99,
+    "temp_max": 284.01,
+    "pressure": 977,
+    "humidity": 91,
+    "sea_level": 977,
+    "grnd_level": 972
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 7.2,
+    "deg": 310
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1761203402,
+  "sys": {
+    "type": 2,
+    "id": 268730,
+    "country": "GB",
+    "sunrise": 1761201489,
+    "sunset": 1761238271
+  },
+  "timezone": 3600,
+  "id": 2643743,
+  "name": "London",
+  "cod": 200
+}
+
+# Useful links:
+
+- API documentation https://openweathermap.org/api
+- Details of your plan https://openweathermap.org/price
+- Please, note that 16-days daily forecast and History API are not available for Free subscribers
