@@ -67,11 +67,7 @@ button:hover {
     background: #f7f7f7;
   }
 
-  /* Avatar styles for Profile component */
-  .avatar {
-    border-radius: 50%;
-}
-/* --- App navigation --- */
+  /* --- App navigation --- */
 nav {
   position: fixed;
   left: 0;

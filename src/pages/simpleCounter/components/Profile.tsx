@@ -4,10 +4,10 @@ import "./Profile.css"
 
 export default function Profile() {
     return (
-        <>
+        <div className='profile-container'>
             <h1>{user.name}</h1>
             <img
-                className='avatar'
+                className='avatar_image'
                 src={user.imageUrl}
                 alt={'Photo of ' + user.name}
                 style={{
@@ -15,6 +15,6 @@ export default function Profile() {
                     height: user.imageSize,
                 }}
             />
-        </>
+        </div>
     )
 }
