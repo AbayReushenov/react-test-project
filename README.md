@@ -79,7 +79,7 @@ npm run build
 
 ## 🌐 Деплой
 
-- **Продакшен**: [react-test-project на Vercel](https://react-test-project-git-main-abayreushenovs-projects.vercel.app/habit-tracker)
+- **Продакшен**: [react-test-project на Vercel](https://react-test-project-seven.vercel.app/)
 - **Платформа**: Vercel
 - **Сборка**: `npm run build` (Vite)
 - **Замечание**: статические артефакты находятся в `dist/`
