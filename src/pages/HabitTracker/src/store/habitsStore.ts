@@ -16,6 +16,11 @@ interface StoreState {
 }
 
 export const useHabitsStore = create<StoreState>()(
+//   `devtools` подключает стор к Redux DevTools (расширение браузера). Устанавливаешь Redux DevTools в Chrome, и видишь:
+// - Текущее состояние `habits`.
+// - Историю действий (addHabit, toggleHabit).
+// - Время путешествий (time travel): можно "откатить" изменения.
+// В коде: `devtools(persist(...))` — оборачивает весь стор. Работает из коробки.
   devtools(
     persist(
       (set) => ({
