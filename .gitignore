@@ -25,3 +25,4 @@ dist-ssr
 
 # API-KEYS and other passwords
 .env
+.vercel
