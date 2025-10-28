@@ -13,7 +13,7 @@ export default function HabitForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form onSubmit={handleSubmit} className="flex gap-2 sticky top-0 z-50 bg-white p-4 shadow">
       <input
         className="border px-2 py-1"
         placeholder="Введите привычку..."
