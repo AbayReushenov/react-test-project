@@ -26,3 +26,6 @@ dist-ssr
 # API-KEYS and other passwords
 .env
 .vercel
+
+# HELPERS
+project_helpers/

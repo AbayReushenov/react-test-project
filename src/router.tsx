@@ -5,6 +5,7 @@ import About from './pages/about/About'
 import Layout from './Layout'
 import SimpleCounter from './pages/simpleCounter/SimpleCounter'
 import WeatherDashboard from './pages/weatherDashboard/WeatherDashboard'
+import EcommerceShop from './pages/EcommerceShop/EcommerceShop'
 
 const router = createBrowserRouter([
     {
@@ -15,7 +16,9 @@ const router = createBrowserRouter([
             { path: 'about', element: <About /> },
             { path: 'simple-counter', element: <SimpleCounter /> },
             { path: 'habit-tracker', element: <HabitTrackers /> },
+            { path: 'ecommerce-shop', element: <EcommerceShop /> },
             { path: 'weather-dashboard', element: <WeatherDashboard /> },
+
         ],
     },
 ])

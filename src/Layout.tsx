@@ -9,6 +9,7 @@ function Layout() {
       <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : undefined}>О проекте</NavLink>
       <NavLink to="/simple-counter" className={({ isActive }) => isActive ? 'active' : undefined}>Простой счетчик</NavLink>
       <NavLink to="/habit-tracker" className={({ isActive }) => isActive ? 'active' : undefined}>Трекер привычек</NavLink>
+      <NavLink to="/ecommerce-shop" className={({ isActive }) => isActive ? 'active' : undefined}>E-commerce Shop</NavLink>
       <NavLink to="/weather-dashboard" className={({ isActive }) => isActive ? 'active' : undefined}>Погодный дашборд с прогнозом</NavLink>
     </nav>
 
