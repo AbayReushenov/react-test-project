@@ -3,6 +3,31 @@
 E-commerce приложение с Redux Toolkit + TypeScript.
 Проект будет включать корзину, фильтры, RTK Query для API и все современные best practices.
 
+**Почему этот проект:**
+
+- Redux Toolkit создан для **сложных приложений** с нормализацией данных
+- Покажет **RTK Query** для работы с API (кеширование, инвалидация)
+- Демонстрирует **middleware** и async thunks
+- Большой объём состояния с зависимостями
+
+**Функционал:**
+
+- Список товаров с пагинацией (RTK Query)
+- Фильтры (категория, цена, рейтинг)
+- Корзина с расчётом итогов
+- История заказов
+- Async операции (добавление в корзину, оплата)
+
+**Технологии**
+
+- `createSlice`, `createAsyncThunk`
+- RTK Query (автоматические хуки для API)
+- Нормализация данных с `createEntityAdapter`
+- Redux DevTools интеграция
+- Middleware и side effects
+
+***
+
 ## Возможности
 
 ## Технологии
@@ -50,3 +75,15 @@ npm run dev
 
 
 ## Как это работает
+
+
+## 🗺️ Дорожная карта реализации
+
+### Фаза 1: Redux Toolkit (E-commerce) 
+
+1. Настрой RTK с TypeScript
+2. Создай слайсы (products, cart, filters, orders)
+3. Реализуй RTK Query для API
+4. Добавь async thunks для checkout
+5. Интегрируй Redux DevTools
+6. Напиши юнит-тесты для редьюсеров
