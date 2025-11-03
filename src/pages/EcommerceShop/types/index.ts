@@ -1,3 +1,4 @@
+// Product — модель товара
 export interface Product {
     id: number // ✅ Уникальный идентификатор
     title: string // ✅ Название товара
@@ -12,32 +13,37 @@ export interface Product {
     }
 }
 
+//  CartItem — элемент корзины
 export interface CartItem {
-    product: Product
-    quantity: number
+    product: Product // ✅ Полный объект товара
+    quantity: number // ✅ Количество единиц
 }
 
+// Order — модель заказа
 export interface Order {
-    id: string
-    items: CartItem[]
-    total: number
-    date: string
-    status: 'pending' | 'completed' | 'cancelled'
+    id: string // ✅ Уникальный ID заказа
+    items: CartItem[] // ✅ Товары из корзины
+    total: number // ✅ Общая сумма
+    date: string // ✅ Дата оформления (ISO 8601)
+    status: 'pending' | 'completed' | 'cancelled' // ✅ Literal types
 }
 
+// FiltersState — состояние фильтров
 export interface FiltersState {
-    category: string
-    priceRange: [number, number]
-    minRating: number
-    sortBy: 'price-asc' | 'price-desc' | 'rating' | 'name'
-    searchQuery: string
+    category: string // ✅ Текущая категория
+    priceRange: [number, number] // ✅ Tuple [min, max]
+    minRating: number // ✅ Минимальный рейтинг
+    sortBy: 'price-asc' | 'price-desc' | 'rating' | 'name' // ✅ Enum
+    searchQuery: string // ✅ Поисковый запрос
 }
 
+// CartState — состояние корзины
 export interface CartState {
-    items: CartItem[]
+    items: CartItem[] // ✅ Массив элементов корзины
 }
 
+// OrdersState — состояние заказов
 export interface OrdersState {
-    orders: Order[]
-    isCheckingOut: boolean
+    orders: Order[] // ✅ История заказов
+    isCheckingOut: boolean // ✅ Флаг оформления заказа
 }
