@@ -1,35 +1,62 @@
-// RTK Query API
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type { Product } from '../../types'
+// Корзина Slice (store/slices/cartSlice.ts)
 
-// Создание API-объекта: createApi
-export const productsApi = createApi({
-    reducerPath: 'productsApi', // Имя reducer'а в Redux store. RTK Query добавит свой reducer в store под этим ключом: `state.productsApi`.
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com' }),
-    tagTypes: ['Products'],
-    endpoints: (builder) => ({
-        // Получить все товары
-        getProducts: builder.query<Product[], void>({
-            query: () => '/products',
-            providesTags: ['Products'],
-        }),
+import { createSlice } from '@reduxjs/toolkit'
+import type { PayloadAction } from '@reduxjs/toolkit'
+import type { CartState, /* CartItem, */ Product } from '../../types'
+import type { RootState } from '../index'
 
-        // Получить товар по ID
-        getProductById: builder.query<Product, number>({
-            query: (id) => `/products/${id}`,
-        }),
+const initialState: CartState = {
+    items: [],
+}
 
-        // Получить категории
-        getCategories: builder.query<string[], void>({
-            query: () => '/products/categories',
-        }),
+const cartSlice = createSlice({
+    name: 'cart',
+    initialState,
+    reducers: {
+        addToCart: (state, action: PayloadAction<Product>) => {
+            const existingItem = state.items.find((item) => item.product.id === action.payload.id)
 
-        // Получить товары по категории
-        getProductsByCategory: builder.query<Product[], string>({
-            query: (category) => `/products/category/${category}`,
-        }),
-    }),
+            if (existingItem) {
+                existingItem.quantity += 1
+            } else {
+                state.items.push({
+                    product: action.payload,
+                    quantity: 1,
+                })
+            }
+        },
+
+        removeFromCart: (state, action: PayloadAction<number>) => {
+            state.items = state.items.filter((item) => item.product.id !== action.payload)
+        },
+
+        updateQuantity: (state, action: PayloadAction<{ productId: number; quantity: number }>) => {
+            const item = state.items.find((item) => item.product.id === action.payload.productId)
+
+            if (item) {
+                if (action.payload.quantity <= 0) {
+                    state.items = state.items.filter((item) => item.product.id !== action.payload.productId)
+                } else {
+                    item.quantity = action.payload.quantity
+                }
+            }
+        },
+
+        clearCart: (state) => {
+            state.items = []
+        },
+    },
 })
 
-export const { useGetProductsQuery, useGetProductByIdQuery, useGetCategoriesQuery, useGetProductsByCategoryQuery } =
-    productsApi
+// Селекторы
+export const selectCartItems = (state: RootState) => state.cart.items
+
+export const selectCartTotal = (state: RootState) =>
+    state.cart.items.reduce((total, item) => total + item.product.price * item.quantity, 0)
+
+export const selectCartItemsCount = (state: RootState) =>
+    state.cart.items.reduce((count, item) => count + item.quantity, 0)
+
+export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions
+
+export default cartSlice.reducer
