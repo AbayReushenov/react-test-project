@@ -1,4 +1,4 @@
-// Корзина Slice (store/slices/cartSlice.ts)
+// 3. Корзина Slice (store/slices/cartSlice.ts)
 
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'

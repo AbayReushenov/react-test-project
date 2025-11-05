@@ -1,4 +1,4 @@
-// RTK Query API (store/api/productsApi.ts)
+// 2. RTK Query API (store/api/productsApi.ts)
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type { Product } from '../../types'

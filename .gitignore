@@ -27,5 +27,5 @@ dist-ssr
 .env
 .vercel
 
-# HELPERS
-project_helpers/
+# MY DOCUMENTATION
+.docs/

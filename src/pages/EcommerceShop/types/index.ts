@@ -1,3 +1,4 @@
+// 1. Типы данных (types/index.ts)
 // Product — модель товара
 export interface Product {
     id: number // ✅ Уникальный идентификатор
